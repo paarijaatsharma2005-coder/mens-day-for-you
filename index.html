@@ -45,9 +45,7 @@ h1 {
   margin: 15px 0;
 }
 
-h2 {
-  font-size: clamp(30px, 6vw, 48px);
-}
+h2 { font-size: clamp(30px, 6vw, 48px); }
 
 p {
   line-height: 1.9;
@@ -87,11 +85,6 @@ button:hover {
   box-shadow: 0 8px 30px #ff789f55;
 }
 
-.outline {
-  background: transparent;
-  border: 1px solid #ff9bb5;
-}
-
 .hero {
   background:
     radial-gradient(ellipse at 50% 40%,#682a4a 0%,transparent 65%),
@@ -123,12 +116,12 @@ button:hover {
   animation: appear .8s ease;
 }
 
+.letter.show { display:block; }
+
 @keyframes appear {
   from {opacity:0;transform:translateY(20px);}
   to {opacity:1;transform:translateY(0);}
 }
-
-.letter.show { display:block; }
 
 .divider {
   width: 70px;
@@ -185,7 +178,10 @@ button:hover {
 }
 
 @keyframes floatUp {
-  to { transform:translateY(-110vh) rotate(360deg); opacity:0; }
+  to {
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
 }
 
 footer {
@@ -219,16 +215,25 @@ html { scroll-behavior: smooth; }
 <section class="hero" id="home">
   <div class="hero-heart">❤️</div>
   <div class="eyebrow">A little something for someone special</div>
-  <h1>Happy Men's Day,<br><span class="gradient">My Love.</span></h1>
+
+  <h1>Happy Men's Day,<br>
+    <span class="gradient">My Love.</span>
+  </h1>
+
   <p>
     To my favourite human, my comfort person,
     my biggest headache and my favourite blessing.
   </p>
+
   <p>Today, this little corner of the internet belongs to you.</p>
+
   <button onclick="goTo('letter-section')">
     Open your surprise 💌
   </button>
-  <p style="font-size:12px;color:#ad8fa4">Made with a whole lot of love.</p>
+
+  <p style="font-size:12px;color:#ad8fa4">
+    Made with a whole lot of love.
+  </p>
 </section>
 
 
@@ -240,15 +245,15 @@ html { scroll-behavior: smooth; }
   <div class="card">
     <div style="font-size:50px">💌</div>
     <h3>Hey, my Yashasvi...</h3>
+
     <p>There's something I've been wanting to tell you.</p>
+
     <button onclick="openLetter()">Open my letter ❤️</button>
 
     <div class="letter" id="letter">
       <div class="divider"></div>
 
-      <p>
-        Happy Men's Day, baby! ❤️
-      </p>
+      <p>Happy Men's Day, baby! ❤️</p>
 
       <p>
         First of all, I want you to know how much you mean to me.
@@ -319,26 +324,34 @@ html { scroll-behavior: smooth; }
 
   <div class="card">
     <h2>01. You're appreciated. 🫶</h2>
-    <p>I hope you know that I see your efforts, your hard work,
-    your dreams and everything you do. I am proud of you.</p>
+    <p>
+      I hope you know that I see your efforts, your hard work,
+      your dreams and everything you do. I am proud of you.
+    </p>
   </div>
 
   <div class="card">
     <h2>02. You're loved. ❤️</h2>
-    <p>Even when we disagree, even when things aren't perfect,
-    my love for you isn't something I take lightly.</p>
+    <p>
+      Even when we disagree, even when things aren't perfect,
+      my love for you isn't something I take lightly.
+    </p>
   </div>
 
   <div class="card">
     <h2>03. I believe in you. ✨</h2>
-    <p>I hope you achieve everything you've ever dreamed of.
-    I want to be there cheering for you through it all.</p>
+    <p>
+      I hope you achieve everything you've ever dreamed of.
+      I want to be there cheering for you through it all.
+    </p>
   </div>
 
   <div class="card">
     <h2>04. I choose growth. 🌱</h2>
-    <p>I want us to build a relationship where we can be honest,
-    feel safe, communicate and grow without losing ourselves.</p>
+    <p>
+      I want us to build a relationship where we can be honest,
+      feel safe, communicate and grow without losing ourselves.
+    </p>
   </div>
 </section>
 
@@ -351,10 +364,12 @@ html { scroll-behavior: smooth; }
   <div class="card">
     <div style="font-size:55px">🏡</div>
     <h2>Us, someday.</h2>
+
     <p>
       I imagine a future where we don't have to calculate
       distances or count days until we meet.
     </p>
+
     <p>
       Random grocery trips. Cooking together.
       Silly arguments about what to watch.
@@ -362,11 +377,15 @@ html { scroll-behavior: smooth; }
       Travelling. Building our careers.
       Making a home that feels like ours.
     </p>
+
     <p>
       And most importantly, being each other's safe place
       while still encouraging each other to chase big dreams.
     </p>
-    <p class="promise">Not a perfect life. Just a beautiful life together. ❤️</p>
+
+    <p class="promise">
+      Not a perfect life. Just a beautiful life together. ❤️
+    </p>
   </div>
 </section>
 
@@ -380,7 +399,9 @@ html { scroll-behavior: smooth; }
   <div class="card">
     <div id="quiz-content"></div>
     <p class="feedback" id="feedback"></p>
-    <button onclick="nextQuestion()" id="next">Next question →</button>
+    <button onclick="nextQuestion()" id="next">
+      Next question →
+    </button>
     <p id="quiz-progress" style="font-size:12px"></p>
   </div>
 </section>
@@ -392,31 +413,44 @@ html { scroll-behavior: smooth; }
   <h2>Now tell me something. 💗</h2>
 
   <div class="card">
-    <p class="question">What's one thing you wish we did more often?</p>
+
+    <p class="question">
+      What's one thing you wish we did more often?
+    </p>
     <input id="wish" placeholder="Tell me your answer...">
 
-    <p class="question">What's your favourite memory of us?</p>
+    <p class="question">
+      What's your favourite memory of us?
+    </p>
     <input id="memory" placeholder="Our favourite memory...">
 
-    <p class="question">Where should our next date be?</p>
+    <p class="question">
+      Where should our next date be?
+    </p>
     <input id="date" placeholder="Take me somewhere!">
 
-    <p class="question">One thing you want us to improve?</p>
+    <p class="question">
+      One thing you want us to improve?
+    </p>
     <input id="improve" placeholder="I'm listening...">
 
     <button onclick="saveAnswers()">Send your answers ❤️</button>
+
     <p id="saved-message" class="feedback"></p>
   </div>
 </section>
 
 
-<!-- PROMISE -->
+<!-- FINAL PROMISE -->
 <section>
   <div class="eyebrow">The last chapter · But not our last</div>
+
   <div style="font-size:65px">♾️</div>
+
   <h1><span class="gradient">One more thing...</span></h1>
 
   <div class="card">
+
     <p>
       I know relationships aren't built by one big romantic gesture.
       They're built by little choices, every single day.
@@ -435,26 +469,90 @@ html { scroll-behavior: smooth; }
       but because I want to grow as a person too.
     </p>
 
+    <div class="divider"></div>
+
+    <h2 class="gradient">A little promise from me. ❤️</h2>
+
     <p class="promise">
-      I want a lifetime of little moments with you.
+      I don't want a perfect relationship.
+      I want a real one.
+      One where we learn, apologise, forgive,
+      communicate, grow and keep falling in love
+      with each other.
+    </p>
+
+    <p class="promise">
+      I want it to be you and me, against the problems —
+      never against each other.
+    </p>
+
+    <div class="divider"></div>
+
+    <p>
+      I know we won't always get everything right.
+      There will be difficult days, misunderstandings
+      and moments when things aren't easy.
+      But I want us to remember why we started,
+      talk things through and never stop putting in effort.
+    </p>
+
+    <p>
+      I want to celebrate your successes, hold your hand
+      through your struggles and watch us become the people
+      we've always dreamed of being.
+    </p>
+
+    <p class="promise">
+      I want a lifetime of little moments with you. ♾️
     </p>
 
     <h2>Happy Men's Day, baby. ❤️</h2>
+
     <p>Thank you for being you.</p>
     <p>And thank you for being a part of my story.</p>
 
-    <button onclick="finalSurprise()">One last surprise? 🥺</button>
-    <h2 id="final-message" class="hidden gradient">
-      I LOVE YOU SO MUCH, YASHASVI! ❤️
-      <br><br>
-      Here's to growing together. ♾️
-    </h2>
+    <button onclick="finalSurprise()">
+      One last surprise? 🥺
+    </button>
+
+    <div id="final-message" class="hidden">
+
+      <div class="divider"></div>
+
+      <div style="font-size:55px">💗</div>
+
+      <h2 class="gradient">
+        If I had to choose again,
+        I'd still want to find my way to you.
+      </h2>
+
+      <p>
+        In every lifetime, every version of me,
+        through every unexpected turn,
+        I hope I find you again.
+      </p>
+
+      <h1 class="gradient">
+        I LOVE YOU SO MUCH, YASHASVI! ❤️
+      </h1>
+
+      <p class="promise">
+        Here's to us, our future and everything
+        beautiful we're yet to build together. ♾️
+      </p>
+
+      <p>Forever your girl. 🥹❤️</p>
+
+    </div>
+
   </div>
 </section>
 
+
 <footer>
   Made with love, a little guilt, lots of hope and endless affection. ❤️
-  <br>Just for my favourite boy.
+  <br>
+  Just for my favourite boy.
 </footer>
 
 
@@ -462,7 +560,9 @@ html { scroll-behavior: smooth; }
 
 // Navigation
 function goTo(id) {
-  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  document.getElementById(id).scrollIntoView({
+    behavior:'smooth'
+  });
 }
 
 // Letter
@@ -476,32 +576,68 @@ const questions = [
   {
     q: "Who is more dramatic in this relationship? 😂",
     a: ["Definitely you", "Definitely me", "Both of us, obviously"],
-    response: ["Excuse me?! 😂", "You admitted it!", "At least we're self-aware."]
+    response: [
+      "Excuse me?! 😂",
+      "You admitted it!",
+      "At least we're self-aware."
+    ]
   },
   {
     q: "What's our ideal date?",
-    a: ["Fancy dinner", "Cuddles and a movie", "Random adventure together"],
-    response: ["A little romance never hurts. ❤️", "Cuddles are undefeated.", "Let's make memories!"]
+    a: [
+      "Fancy dinner",
+      "Cuddles and a movie",
+      "Random adventure together"
+    ],
+    response: [
+      "A little romance never hurts. ❤️",
+      "Cuddles are undefeated.",
+      "Let's make memories!"
+    ]
   },
   {
     q: "Who says sorry first after an argument?",
     a: ["You", "Me", "Whoever misses the other first"],
-    response: ["Interesting answer, mister. 😏", "I see you!", "Okay, that's actually cute."]
+    response: [
+      "Interesting answer, mister. 😏",
+      "I see you!",
+      "Okay, that's actually cute."
+    ]
   },
   {
     q: "What do I want most for our future?",
-    a: ["Expensive gifts", "A healthy, happy life together", "Unlimited holidays"],
-    response: ["I mean, gifts are nice! 😂", "THAT'S THE ONE. ❤️", "Let's do both!"]
+    a: [
+      "Expensive gifts",
+      "A healthy, happy life together",
+      "Unlimited holidays"
+    ],
+    response: [
+      "I mean, gifts are nice! 😂",
+      "THAT'S THE ONE. ❤️",
+      "Let's do both!"
+    ]
   },
   {
     q: "How much do I love you?",
     a: ["A little", "A lot", "More than I can explain"],
-    response: ["Wrong. Try again. 😂", "Still an understatement!", "Correct answer, baby. ❤️"]
+    response: [
+      "Wrong. Try again. 😂",
+      "Still an understatement!",
+      "Correct answer, baby. ❤️"
+    ]
   },
   {
     q: "Will you keep growing with me?",
-    a: ["Yes, always", "Only if you stop stealing my food", "Both!"],
-    response: ["That's what I want. ❤️", "I make no promises about the food.", "Deal. 🤝"]
+    a: [
+      "Yes, always",
+      "Only if you stop stealing my food",
+      "Both!"
+    ],
+    response: [
+      "That's what I want. ❤️",
+      "I make no promises about the food.",
+      "Deal. 🤝"
+    ]
   }
 ];
 
@@ -510,6 +646,7 @@ let chosen = false;
 
 function renderQuestion() {
   chosen = false;
+
   const q = questions[current];
 
   document.getElementById('quiz-content').innerHTML =
@@ -521,8 +658,11 @@ function renderQuestion() {
     ).join('');
 
   document.getElementById('feedback').textContent = '';
+
   document.getElementById('next').textContent =
-    current === questions.length-1 ? 'Finish quiz ❤️' : 'Next question →';
+    current === questions.length-1
+      ? 'Finish quiz ❤️'
+      : 'Next question →';
 
   document.getElementById('quiz-progress').textContent =
     `Question ${current+1} of ${questions.length}`;
@@ -530,6 +670,7 @@ function renderQuestion() {
 
 function selectAnswer(i,element) {
   if(chosen) return;
+
   chosen = true;
 
   document.querySelectorAll('.answer').forEach(b =>
@@ -537,6 +678,7 @@ function selectAnswer(i,element) {
   );
 
   element.classList.add('selected');
+
   document.getElementById('feedback').textContent =
     questions[current].response[i];
 
@@ -559,6 +701,7 @@ function nextQuestion() {
        <p>Now come collect your kisses. 😘</p>`;
 
     document.getElementById('next').style.display = 'none';
+
     document.getElementById('quiz-progress').textContent =
       'Officially my favourite quiz partner.';
 
@@ -569,8 +712,9 @@ function nextQuestion() {
   renderQuestion();
 }
 
-// Answer collection
+// Personal answers
 function saveAnswers() {
+
   const answers = {
     wish: document.getElementById('wish').value,
     memory: document.getElementById('memory').value,
@@ -591,12 +735,14 @@ function saveAnswers() {
     `Next date: ${answers.date}\n` +
     `Let's improve: ${answers.improve}`;
 
-  // Opens a pre-filled message in the visitor's email app.
-  const subject = encodeURIComponent("My answers to your love website ❤️");
+  const subject = encodeURIComponent(
+    "My answers to your love website ❤️"
+  );
+
   const body = encodeURIComponent(message);
 
   document.getElementById('saved-message').textContent =
-    "Your answers are ready! Opening your email app... ❤️";
+    "Your answers are ready! ❤️";
 
   window.location.href =
     `mailto:?subject=${subject}&body=${body}`;
@@ -604,25 +750,39 @@ function saveAnswers() {
 
 // Final surprise
 function finalSurprise() {
-  document.getElementById('final-message').classList.remove('hidden');
+  document.getElementById('final-message')
+    .classList.remove('hidden');
+
   createHearts(40);
 }
 
 // Floating hearts
 function createHearts(amount) {
-  const symbols = ['❤️','💗','💕','💖','💘','🩷'];
 
-  for(let i=0;i<amount;i++) {
+  const symbols = [
+    '❤️','💗','💕','💖','💘','🩷'
+  ];
+
+  for(let i=0; i<amount; i++) {
+
     const heart = document.createElement('div');
+
     heart.className = 'heart';
-    heart.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+
+    heart.textContent =
+      symbols[Math.floor(Math.random()*symbols.length)];
 
     heart.style.left = Math.random()*100+'vw';
-    heart.style.fontSize = (15+Math.random()*25)+'px';
-    heart.style.animationDuration = (3+Math.random()*4)+'s';
+
+    heart.style.fontSize =
+      (15+Math.random()*25)+'px';
+
+    heart.style.animationDuration =
+      (3+Math.random()*4)+'s';
 
     document.body.appendChild(heart);
-    setTimeout(()=>heart.remove(),7000);
+
+    setTimeout(() => heart.remove(),7000);
   }
 }
 
@@ -630,7 +790,7 @@ function createHearts(amount) {
 renderQuestion();
 
 // Occasional floating hearts
-setInterval(()=>createHearts(1),1800);
+setInterval(() => createHearts(1),1800);
 
 </script>
 
