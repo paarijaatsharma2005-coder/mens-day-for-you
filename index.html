@@ -1,0 +1,638 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Favourite Man ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+
+:root {
+  --pink: #ff7b9c;
+  --dark: #160d1c;
+  --cream: #fff0e9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--dark);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+section {
+  min-height: 100vh;
+  padding: 90px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: clamp(42px, 8vw, 75px);
+  margin: 15px 0;
+}
+
+h2 {
+  font-size: clamp(30px, 6vw, 48px);
+}
+
+p {
+  line-height: 1.9;
+  max-width: 650px;
+  font-size: 16px;
+  color: #ead9e4;
+}
+
+.eyebrow {
+  color: var(--pink);
+  letter-spacing: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.gradient {
+  background: linear-gradient(90deg,#ff789f,#ffd0dc,#bd9aff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+button {
+  padding: 14px 28px;
+  border: 1px solid #ff9bb5;
+  border-radius: 40px;
+  background: linear-gradient(120deg,#ff789f,#bd83cb);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px;
+  transition: .3s;
+}
+
+button:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 8px 30px #ff789f55;
+}
+
+.outline {
+  background: transparent;
+  border: 1px solid #ff9bb5;
+}
+
+.hero {
+  background:
+    radial-gradient(ellipse at 50% 40%,#682a4a 0%,transparent 65%),
+    var(--dark);
+}
+
+.hero-heart {
+  font-size: 65px;
+  animation: heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat {
+  50% { transform: scale(1.2); }
+}
+
+.card {
+  background: #ffffff0b;
+  border: 1px solid #ffffff1c;
+  border-radius: 24px;
+  padding: 35px;
+  width: min(650px, 95%);
+  margin: 15px auto;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 50px #0003;
+}
+
+.letter {
+  display: none;
+  animation: appear .8s ease;
+}
+
+@keyframes appear {
+  from {opacity:0;transform:translateY(20px);}
+  to {opacity:1;transform:translateY(0);}
+}
+
+.letter.show { display:block; }
+
+.divider {
+  width: 70px;
+  height: 2px;
+  background: var(--pink);
+  margin: 25px auto;
+}
+
+.question {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  margin: 20px 0;
+}
+
+.answer {
+  display: block;
+  width: 100%;
+  background: #ffffff0c;
+  border: 1px solid #ffffff2c;
+  border-radius: 15px;
+  color: white;
+  padding: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 15px;
+  transition: .2s;
+}
+
+.answer:hover, .answer.selected {
+  background: #ff789f35;
+  border-color: var(--pink);
+}
+
+.feedback {
+  color: #ffb6cb;
+  min-height: 30px;
+}
+
+.hidden { display:none; }
+
+.promise {
+  font-family: 'Playfair Display',serif;
+  font-style: italic;
+  color: #ffc0d2;
+  font-size: 22px;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  z-index: 10;
+}
+
+@keyframes floatUp {
+  to { transform:translateY(-110vh) rotate(360deg); opacity:0; }
+}
+
+footer {
+  padding: 35px;
+  color: #b9a4b5;
+  font-size: 12px;
+}
+
+input {
+  background: #ffffff12;
+  color: white;
+  border: 1px solid #ff9bb5;
+  padding: 13px;
+  border-radius: 12px;
+  width: min(350px,90%);
+  font-size: 15px;
+  outline: none;
+  margin: 10px;
+}
+
+::placeholder { color: #c8b5c4; }
+
+html { scroll-behavior: smooth; }
+
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<section class="hero" id="home">
+  <div class="hero-heart">❤️</div>
+  <div class="eyebrow">A little something for someone special</div>
+  <h1>Happy Men's Day,<br><span class="gradient">My Love.</span></h1>
+  <p>
+    To my favourite human, my comfort person,
+    my biggest headache and my favourite blessing.
+  </p>
+  <p>Today, this little corner of the internet belongs to you.</p>
+  <button onclick="goTo('letter-section')">
+    Open your surprise 💌
+  </button>
+  <p style="font-size:12px;color:#ad8fa4">Made with a whole lot of love.</p>
+</section>
+
+
+<!-- LOVE LETTER -->
+<section id="letter-section">
+  <div class="eyebrow">Chapter 01 · From my heart</div>
+  <h2>A letter for <span class="gradient">you.</span></h2>
+
+  <div class="card">
+    <div style="font-size:50px">💌</div>
+    <h3>Hey, my Yashasvi...</h3>
+    <p>There's something I've been wanting to tell you.</p>
+    <button onclick="openLetter()">Open my letter ❤️</button>
+
+    <div class="letter" id="letter">
+      <div class="divider"></div>
+
+      <p>
+        Happy Men's Day, baby! ❤️
+      </p>
+
+      <p>
+        First of all, I want you to know how much you mean to me.
+        I might not always express it perfectly, and sometimes
+        my actions might not communicate what my heart actually feels,
+        but I love you. A LOT.
+      </p>
+
+      <p>
+        I also want to apologise. I'm sorry for the times I've
+        been a bad girlfriend, for the times I've hurt you,
+        disappointed you, misunderstood you or made things
+        harder than they needed to be.
+      </p>
+
+      <p>
+        I'm not saying this just to make things okay for the moment.
+        I genuinely want to work on myself. I want to understand
+        you better, communicate better, listen more, be more patient
+        and become someone who makes you feel loved, valued,
+        respected and secure.
+      </p>
+
+      <p>
+        I know that saying I'll improve means nothing without
+        actually showing it. I want my actions to prove it.
+        I'm not promising to become perfect overnight.
+        I'm promising to keep trying, learning and growing.
+      </p>
+
+      <p>
+        I really, really want us to be together.
+        I see a future with you. Not just the cute dates
+        and romantic moments, but the difficult days too.
+        I want us to build something healthy, beautiful
+        and meaningful.
+      </p>
+
+      <p>
+        I want us to grow together, celebrate each other's
+        achievements, support each other's dreams, push each
+        other to become better people and never stop choosing
+        each other.
+      </p>
+
+      <p>
+        I don't want us to be two people who simply love each other.
+        I want us to be two people who help each other become
+        better versions of themselves.
+      </p>
+
+      <p>
+        I love you, Yashasvi. And I genuinely hope we get to
+        experience all the beautiful things we dream about together.
+      </p>
+
+      <p class="promise">Always rooting for us. ♾️</p>
+      <p>Yours, with all my heart. ❤️</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- APPRECIATION -->
+<section>
+  <div class="eyebrow">Chapter 02 · A little appreciation</div>
+  <h2>Things I want you to know.</h2>
+
+  <div class="card">
+    <h2>01. You're appreciated. 🫶</h2>
+    <p>I hope you know that I see your efforts, your hard work,
+    your dreams and everything you do. I am proud of you.</p>
+  </div>
+
+  <div class="card">
+    <h2>02. You're loved. ❤️</h2>
+    <p>Even when we disagree, even when things aren't perfect,
+    my love for you isn't something I take lightly.</p>
+  </div>
+
+  <div class="card">
+    <h2>03. I believe in you. ✨</h2>
+    <p>I hope you achieve everything you've ever dreamed of.
+    I want to be there cheering for you through it all.</p>
+  </div>
+
+  <div class="card">
+    <h2>04. I choose growth. 🌱</h2>
+    <p>I want us to build a relationship where we can be honest,
+    feel safe, communicate and grow without losing ourselves.</p>
+  </div>
+</section>
+
+
+<!-- FUTURE -->
+<section>
+  <div class="eyebrow">Chapter 03 · Our little future</div>
+  <h2>Can I tell you what I imagine?</h2>
+
+  <div class="card">
+    <div style="font-size:55px">🏡</div>
+    <h2>Us, someday.</h2>
+    <p>
+      I imagine a future where we don't have to calculate
+      distances or count days until we meet.
+    </p>
+    <p>
+      Random grocery trips. Cooking together.
+      Silly arguments about what to watch.
+      Celebrating little wins. Late-night conversations.
+      Travelling. Building our careers.
+      Making a home that feels like ours.
+    </p>
+    <p>
+      And most importantly, being each other's safe place
+      while still encouraging each other to chase big dreams.
+    </p>
+    <p class="promise">Not a perfect life. Just a beautiful life together. ❤️</p>
+  </div>
+</section>
+
+
+<!-- FUN QUESTIONS -->
+<section id="quiz">
+  <div class="eyebrow">Chapter 04 · Your turn, mister</div>
+  <h2>Let's see how well you know us. 😏</h2>
+  <p>Answer these honestly. I'm watching. 😂</p>
+
+  <div class="card">
+    <div id="quiz-content"></div>
+    <p class="feedback" id="feedback"></p>
+    <button onclick="nextQuestion()" id="next">Next question →</button>
+    <p id="quiz-progress" style="font-size:12px"></p>
+  </div>
+</section>
+
+
+<!-- PERSONAL ANSWERS -->
+<section>
+  <div class="eyebrow">Chapter 05 · Your confession corner</div>
+  <h2>Now tell me something. 💗</h2>
+
+  <div class="card">
+    <p class="question">What's one thing you wish we did more often?</p>
+    <input id="wish" placeholder="Tell me your answer...">
+
+    <p class="question">What's your favourite memory of us?</p>
+    <input id="memory" placeholder="Our favourite memory...">
+
+    <p class="question">Where should our next date be?</p>
+    <input id="date" placeholder="Take me somewhere!">
+
+    <p class="question">One thing you want us to improve?</p>
+    <input id="improve" placeholder="I'm listening...">
+
+    <button onclick="saveAnswers()">Send your answers ❤️</button>
+    <p id="saved-message" class="feedback"></p>
+  </div>
+</section>
+
+
+<!-- PROMISE -->
+<section>
+  <div class="eyebrow">The last chapter · But not our last</div>
+  <div style="font-size:65px">♾️</div>
+  <h1><span class="gradient">One more thing...</span></h1>
+
+  <div class="card">
+    <p>
+      I know relationships aren't built by one big romantic gesture.
+      They're built by little choices, every single day.
+    </p>
+
+    <p>
+      I want to choose patience over ego.
+      Communication over assumptions.
+      Understanding over arguments.
+      Effort over empty promises.
+      And love that feels safe, not uncertain.
+    </p>
+
+    <p>
+      I want to become a better partner, not just for you,
+      but because I want to grow as a person too.
+    </p>
+
+    <p class="promise">
+      I want a lifetime of little moments with you.
+    </p>
+
+    <h2>Happy Men's Day, baby. ❤️</h2>
+    <p>Thank you for being you.</p>
+    <p>And thank you for being a part of my story.</p>
+
+    <button onclick="finalSurprise()">One last surprise? 🥺</button>
+    <h2 id="final-message" class="hidden gradient">
+      I LOVE YOU SO MUCH, YASHASVI! ❤️
+      <br><br>
+      Here's to growing together. ♾️
+    </h2>
+  </div>
+</section>
+
+<footer>
+  Made with love, a little guilt, lots of hope and endless affection. ❤️
+  <br>Just for my favourite boy.
+</footer>
+
+
+<script>
+
+// Navigation
+function goTo(id) {
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+// Letter
+function openLetter() {
+  document.getElementById('letter').classList.add('show');
+  createHearts(12);
+}
+
+// Quiz questions
+const questions = [
+  {
+    q: "Who is more dramatic in this relationship? 😂",
+    a: ["Definitely you", "Definitely me", "Both of us, obviously"],
+    response: ["Excuse me?! 😂", "You admitted it!", "At least we're self-aware."]
+  },
+  {
+    q: "What's our ideal date?",
+    a: ["Fancy dinner", "Cuddles and a movie", "Random adventure together"],
+    response: ["A little romance never hurts. ❤️", "Cuddles are undefeated.", "Let's make memories!"]
+  },
+  {
+    q: "Who says sorry first after an argument?",
+    a: ["You", "Me", "Whoever misses the other first"],
+    response: ["Interesting answer, mister. 😏", "I see you!", "Okay, that's actually cute."]
+  },
+  {
+    q: "What do I want most for our future?",
+    a: ["Expensive gifts", "A healthy, happy life together", "Unlimited holidays"],
+    response: ["I mean, gifts are nice! 😂", "THAT'S THE ONE. ❤️", "Let's do both!"]
+  },
+  {
+    q: "How much do I love you?",
+    a: ["A little", "A lot", "More than I can explain"],
+    response: ["Wrong. Try again. 😂", "Still an understatement!", "Correct answer, baby. ❤️"]
+  },
+  {
+    q: "Will you keep growing with me?",
+    a: ["Yes, always", "Only if you stop stealing my food", "Both!"],
+    response: ["That's what I want. ❤️", "I make no promises about the food.", "Deal. 🤝"]
+  }
+];
+
+let current = 0;
+let chosen = false;
+
+function renderQuestion() {
+  chosen = false;
+  const q = questions[current];
+
+  document.getElementById('quiz-content').innerHTML =
+    `<div class="question">${q.q}</div>` +
+    q.a.map((answer,i) =>
+      `<button class="answer" onclick="selectAnswer(${i},this)">
+        ${answer}
+      </button>`
+    ).join('');
+
+  document.getElementById('feedback').textContent = '';
+  document.getElementById('next').textContent =
+    current === questions.length-1 ? 'Finish quiz ❤️' : 'Next question →';
+
+  document.getElementById('quiz-progress').textContent =
+    `Question ${current+1} of ${questions.length}`;
+}
+
+function selectAnswer(i,element) {
+  if(chosen) return;
+  chosen = true;
+
+  document.querySelectorAll('.answer').forEach(b =>
+    b.classList.remove('selected')
+  );
+
+  element.classList.add('selected');
+  document.getElementById('feedback').textContent =
+    questions[current].response[i];
+
+  createHearts(4);
+}
+
+function nextQuestion() {
+  if(!chosen) {
+    document.getElementById('feedback').textContent =
+      "Choose an answer first, mister! 😂";
+    return;
+  }
+
+  current++;
+
+  if(current >= questions.length) {
+    document.getElementById('quiz-content').innerHTML =
+      `<h2 class="gradient">Quiz completed! ❤️</h2>
+       <p>Congratulations, you've survived my questions.</p>
+       <p>Now come collect your kisses. 😘</p>`;
+
+    document.getElementById('next').style.display = 'none';
+    document.getElementById('quiz-progress').textContent =
+      'Officially my favourite quiz partner.';
+
+    createHearts(25);
+    return;
+  }
+
+  renderQuestion();
+}
+
+// Answer collection
+function saveAnswers() {
+  const answers = {
+    wish: document.getElementById('wish').value,
+    memory: document.getElementById('memory').value,
+    date: document.getElementById('date').value,
+    improve: document.getElementById('improve').value
+  };
+
+  if(!Object.values(answers).some(v => v.trim())) {
+    document.getElementById('saved-message').textContent =
+      "Write at least one answer for me! 🥺";
+    return;
+  }
+
+  const message =
+    `My answers for you ❤️\n\n` +
+    `More of: ${answers.wish}\n` +
+    `Favourite memory: ${answers.memory}\n` +
+    `Next date: ${answers.date}\n` +
+    `Let's improve: ${answers.improve}`;
+
+  // Opens a pre-filled message in the visitor's email app.
+  const subject = encodeURIComponent("My answers to your love website ❤️");
+  const body = encodeURIComponent(message);
+
+  document.getElementById('saved-message').textContent =
+    "Your answers are ready! Opening your email app... ❤️";
+
+  window.location.href =
+    `mailto:?subject=${subject}&body=${body}`;
+}
+
+// Final surprise
+function finalSurprise() {
+  document.getElementById('final-message').classList.remove('hidden');
+  createHearts(40);
+}
+
+// Floating hearts
+function createHearts(amount) {
+  const symbols = ['❤️','💗','💕','💖','💘','🩷'];
+
+  for(let i=0;i<amount;i++) {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+
+    heart.style.left = Math.random()*100+'vw';
+    heart.style.fontSize = (15+Math.random()*25)+'px';
+    heart.style.animationDuration = (3+Math.random()*4)+'s';
+
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),7000);
+  }
+}
+
+// Start quiz
+renderQuestion();
+
+// Occasional floating hearts
+setInterval(()=>createHearts(1),1800);
+
+</script>
+
+</body>
+</html>
